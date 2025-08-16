@@ -1,0 +1,28 @@
+version: '3.8'
+
+volumes:
+  app:
+  cache:
+  db:
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - app:/app
+      - ./:/app/.devcontainer
+      - cache:/cache
+      - /var/run/docker.sock:/var/run/docker.sock
+    tty: true
+  db:
+    image: postgres:17
+    env_file:
+      - .env
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - 15432:5432
