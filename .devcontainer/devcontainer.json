@@ -1,0 +1,43 @@
+{
+  "name": "typescript-functional-ddd-example",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "shutdownAction": "none",
+  "workspaceFolder": "/app",
+  "postCreateCommand": "bash .devcontainer/clone-repository.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-containers",
+        "ritwickdey.liveserver",
+        "biomejs.biome",
+        "prisma.prisma"
+      ],
+      "settings": {
+        "explorer.compactFolders": false,
+        "dev.containers.copyGitConfig": false,
+        "dev.containers.gitCredentialHelperConfigLocation": "none",
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "quickfix.biome": "always",
+          "source.organizeImports.biome": "always"
+        },
+        "typescript.preferences.importModuleSpecifier": "non-relative",
+        "[typescript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        }
+      }
+    }
+  }
+}
