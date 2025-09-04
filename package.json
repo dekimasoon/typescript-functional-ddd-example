@@ -1,0 +1,37 @@
+{
+  "name": "@typescript-functional-ddd-example/root",
+  "version": "0.0.1",
+  "description": "A sample project demonstrating functional programming and Domain-Driven Design in TypeScript.",
+  "author": "dekimasoon",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "lint": "biome lint .",
+    "test": "vitest run",
+    "prisma:generate": "prisma generate --schema ./src/infrastructure/prisma/schema.prisma",
+    "prisma:migrate:dev": "prisma migrate dev --schema ./src/infrastructure/prisma/schema.prisma"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@tsconfig/node-lts": "^22.0.2",
+    "@tsconfig/strictest": "^2.0.5",
+    "@tsconfig/vite-react": "^7.0.0",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "vitest-tsconfig-paths": "^3.4.1"
+  },
+  "dependencies": {
+    "@orpc/client": "^1.8.5",
+    "@orpc/openapi": "^1.8.5",
+    "@orpc/server": "^1.8.5",
+    "@prisma/client": "^6.15.0",
+    "dayjs": "^1.11.13",
+    "pino": "^9.9.0",
+    "prisma": "^6.15.0",
+    "remeda": "^2.30.0",
+    "type-fest": "^4.41.0",
+    "typeid-js": "^1.2.0",
+    "zod": "^4.1.1"
+  }
+}

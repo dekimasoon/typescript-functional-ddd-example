@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@tsconfig/strictest/tsconfig",
+    "@tsconfig/node-vite-react/tsconfig"
+  ]
+}
