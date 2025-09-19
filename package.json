@@ -8,6 +8,7 @@
     "build": "tsc",
     "lint": "biome lint .",
     "test": "vitest run",
+    "dev:backend:api": "tsx --watch src/interface/backend/api/index.ts",
     "prisma:generate": "prisma generate --schema ./src/infrastructure/prisma/schema.prisma",
     "prisma:migrate:dev": "prisma migrate dev --schema ./src/infrastructure/prisma/schema.prisma"
   },
@@ -17,7 +18,9 @@
     "@tsconfig/strictest": "^2.0.5",
     "@tsconfig/vite-react": "^7.0.0",
     "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2",
+    "vite": "^7.1.6",
     "vitest": "^3.2.4",
     "vitest-tsconfig-paths": "^3.4.1"
   },

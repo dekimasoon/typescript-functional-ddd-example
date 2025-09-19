@@ -1,7 +1,7 @@
 import type { UserProps } from "@/domain/object/user"
+import type { DraftPlanWithMetric } from "@/domain/view/draft-plan-with-metrics"
 import type { PlanImplPort } from "@/usecase/port/plan-impl-port"
 import type { Query, QueryImpl } from "@/usecase/usecase-util"
-import type { DraftPlanWithMetric } from "@/usecase/view/draft-plan-with-metrics"
 
 export type GetDraftPlanWithMetricsQuery = Query<
   { userId: UserProps["id"] },

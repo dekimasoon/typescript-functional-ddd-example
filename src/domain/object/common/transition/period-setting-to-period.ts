@@ -1,11 +1,11 @@
 import dayjs from "dayjs"
 import type { Transition } from "@/domain/domain-util"
-import type { DraftPeriod } from "@/domain/object/common/element/draft-period"
 import type { Period } from "@/domain/object/common/element/period"
+import type { PeriodSetting } from "@/domain/object/common/element/period-setting"
 
-export const transitionDraftPeriodToPeriod: Transition<
+export const transitionPeriodSettingToPeriod: Transition<
   {
-    draftPeriod: DraftPeriod
+    periodSetting: PeriodSetting
     config: {
       normalDays: number
       minDays: number

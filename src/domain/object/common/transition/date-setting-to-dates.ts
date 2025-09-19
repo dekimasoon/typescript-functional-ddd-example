@@ -1,8 +1,8 @@
 import dayjs from "dayjs"
 import type { Transition } from "@/domain/domain-util"
-import type { DraftDate } from "@/domain/object/common/element/draft-date"
+import type { DateSetting } from "@/domain/object/common/element/date-setting"
 
-export const transitionDraftDateToDates: Transition<DraftDate, Date[]> = (
+export const transitionDateSettingToDates: Transition<DateSetting, Date[]> = (
   _input,
 ) => {
   // TODO: impl

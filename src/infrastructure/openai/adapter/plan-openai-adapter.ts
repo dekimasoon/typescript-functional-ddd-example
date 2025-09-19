@@ -14,12 +14,12 @@ export const generateRawDraftPlanAndMetrics: OpenAIPortImpl<
   }
   const rawDraftPlan: DraftPlan = {
     goal: "Create sample code to help the team understand DDD and share it with them.",
-    draftPeriod: {
+    periodSetting: {
       type: "AUTO",
     },
     draftActionPlans: [
       {
-        draftDate: {
+        dateSetting: {
           type: "EVERY_DAY",
         },
         metricId: rawDraftMetric.id,

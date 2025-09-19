@@ -1,7 +1,7 @@
 import z from "zod"
 import { dayOfWeek } from "@/domain/object/common/element/day-of-week"
 
-export const draftPeriod = z.union([
+export const periodSetting = z.union([
   z.object({
     type: z.literal("AUTO"),
   }),
@@ -11,4 +11,4 @@ export const draftPeriod = z.union([
   }),
 ])
 
-export type DraftPeriod = z.infer<typeof draftPeriod>
+export type PeriodSetting = z.infer<typeof periodSetting>

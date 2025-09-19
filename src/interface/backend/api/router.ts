@@ -1,4 +1,4 @@
-import { generateRawDraftPlanAndMetrics } from "@/infrastructure/openai/plan-openai-adapter"
+import { generateRawDraftPlanAndMetrics } from "@/infrastructure/openai/adapter/plan-openai-adapter"
 import {
   hasSameNameMetric,
   persisteDraftMetrics,

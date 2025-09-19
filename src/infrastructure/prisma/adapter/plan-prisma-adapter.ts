@@ -1,6 +1,6 @@
 import * as R from "remeda"
-import { draftDateMapper } from "@/infrastructure/prisma/mapper/common/draft-date-mappter"
-import { draftPeriodMapper } from "@/infrastructure/prisma/mapper/common/draft-period-mapper"
+import { dateSettingMapper } from "@/infrastructure/prisma/mapper/common/date-setting-mappter"
+import { periodSettingMapper } from "@/infrastructure/prisma/mapper/common/period-setting-mapper"
 import type { PrismaPortImpl } from "@/infrastructure/prisma/prisma-util"
 import type { PlanImplPort } from "@/usecase/port/plan-impl-port"
 
@@ -43,11 +43,11 @@ export const persisteDraftPlan: PrismaPortImpl<
       data: {
         userId,
         goal: draftPlan.goal,
-        ...draftPeriodMapper.toPersistence(draftPlan.draftPeriod),
+        ...periodSettingMapper.toPersistence(draftPlan.periodSetting),
         draftActionPlans: {
           create: draftPlan.draftActionPlans.map((x) => {
             return {
-              ...draftDateMapper.toPersistence(x.draftDate),
+              ...dateSettingMapper.toPersistence(x.dateSetting),
               when: x.when,
               what: x.what,
               level: x.level,
@@ -64,7 +64,7 @@ export const persisteDraftPlan: PrismaPortImpl<
         draftPlanReminders: {
           create: draftPlan.draftReminders.map((x) => {
             return {
-              ...draftDateMapper.toPersistence(x.draftDate),
+              ...dateSettingMapper.toPersistence(x.dateSetting),
               name: x.name,
               hour: x.time.hour,
               minute: x.time.minute,
@@ -96,7 +96,7 @@ export const getDraftPlanWithMetrics: PrismaPortImpl<
     })
     return {
       goal: raw.goal,
-      draftPeriod: draftPeriodMapper.toDomain(raw),
+      periodSetting: periodSettingMapper.toDomain(raw),
       draftActionPlans: raw.draftActionPlans.map((x) => {
         const remindTime =
           R.isNumber(x.remindTimeHour) && R.isNumber(x.remindTimeMinute)
@@ -106,7 +106,7 @@ export const getDraftPlanWithMetrics: PrismaPortImpl<
               }
             : null
         return {
-          draftDate: draftDateMapper.toDomain(x),
+          dateSetting: dateSettingMapper.toDomain(x),
           when: x.when,
           what: x.what,
           level: x.level,
@@ -122,7 +122,7 @@ export const getDraftPlanWithMetrics: PrismaPortImpl<
             hour: x.hour,
             minute: x.minute,
           },
-          draftDate: draftDateMapper.toDomain(x),
+          dateSetting: dateSettingMapper.toDomain(x),
         }
       }),
     }

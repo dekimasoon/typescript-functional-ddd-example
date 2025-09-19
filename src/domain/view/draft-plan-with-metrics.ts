@@ -4,11 +4,11 @@ import type { PlanProps, PlanRelations } from "@/domain/object/plan"
 
 export type DraftPlanWithMetric = SimplifyDeep<{
   goal: PlanProps["goal"]
-  draftPeriod: PlanProps["draftPeriod"]
+  periodSetting: PlanProps["periodSetting"]
   draftActionPlans: DraftActionPlanWithMetric[]
   draftReminders: PlanRelations["draftReminder"][]
 }>
 
-type DraftActionPlanWithMetric = PlanRelations['draftActionPlan'] & {
+type DraftActionPlanWithMetric = PlanRelations["draftActionPlan"] & {
   metirc: DraftMetric
 }

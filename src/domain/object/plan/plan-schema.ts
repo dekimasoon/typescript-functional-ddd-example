@@ -1,8 +1,8 @@
 import { typeid } from "typeid-js"
 import z from "zod"
 import type { GetType } from "@/domain/domain-util"
-import { draftPeriod } from "@/domain/object/common/element/draft-period"
 import { period } from "@/domain/object/common/element/period"
+import { periodSetting } from "@/domain/object/common/element/period-setting"
 import { actionPlan } from "@/domain/object/plan/element/action-plan"
 import { draftActionPlan } from "@/domain/object/plan/element/draft-action-plan"
 import { planDraftReminder } from "@/domain/object/plan/element/plan-draft-reminder"
@@ -16,7 +16,7 @@ export const planProps = {
   goal: z.string().max(128),
   isDraft: z.boolean(),
   period: period.refine(period3To10Days),
-  draftPeriod,
+  periodSetting,
 }
 
 export const planRelations = {

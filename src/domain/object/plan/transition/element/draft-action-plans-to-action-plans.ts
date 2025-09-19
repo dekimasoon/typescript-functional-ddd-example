@@ -1,5 +1,5 @@
 import type { Transition } from "@/domain/domain-util"
-import { transitionDraftDateToDates } from "@/domain/object/common/transition/draft-date-to-dates"
+import { transitionDateSettingToDates } from "@/domain/object/common/transition/date-setting-to-dates"
 import type { PlanRelations } from "@/domain/object/plan"
 import type { PlanDomainPort } from "@/domain/object/plan/plan-domain-port"
 
@@ -13,7 +13,7 @@ export const transitionDraftActionPlansToActionPlans: Transition<
     return []
   }
 
-  const dateList = transitionDraftDateToDates(actionPlan.draftDate)
+  const dateList = transitionDateSettingToDates(actionPlan.dateSetting)
   return dateList.map((date) => ({
     date,
     when: actionPlan.when,

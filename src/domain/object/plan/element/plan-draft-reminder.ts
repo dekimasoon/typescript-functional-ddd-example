@@ -1,9 +1,9 @@
 import z from "zod"
-import { draftDate } from "@/domain/object/common/element/draft-date"
+import { dateSetting } from "@/domain/object/common/element/date-setting"
 import { planReminder } from "@/domain/object/plan/element/plan-reminder"
 
 export const planDraftReminder = z.object({
-  draftDate,
+  dateSetting,
   name: planReminder.shape.name,
   time: planReminder.shape.time,
 })

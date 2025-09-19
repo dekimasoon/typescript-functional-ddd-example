@@ -1,9 +1,9 @@
 import z from "zod"
-import { draftDate } from "@/domain/object/common/element/draft-date"
+import { dateSetting } from "@/domain/object/common/element/date-setting"
 import { actionPlan } from "@/domain/object/plan/element/action-plan"
 
 export const draftActionPlan = z.object({
-  draftDate,
+  dateSetting,
   when: actionPlan.shape.when,
   what: actionPlan.shape.what,
   level: actionPlan.shape.level,

@@ -5,7 +5,7 @@ import { planProps } from "@/domain/object/plan/plan-schema"
 
 export const draftPlanSchema = z.object({
   goal: planProps.goal,
-  draftPeriod: planProps.draftPeriod,
+  periodSetting: planProps.periodSetting,
   draftActionPlans: z.array(draftActionPlan),
   draftReminders: z.array(planDraftReminder),
 })

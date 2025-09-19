@@ -1,6 +1,6 @@
 import z from "zod"
 import type { Transition } from "@/domain/domain-util"
-import { transitionDraftPeriodToPeriod } from "@/domain/object/common/transition/draft-period-to-period"
+import { transitionPeriodSettingToPeriod } from "@/domain/object/common/transition/period-setting-to-period"
 import type { PlanDomainPort } from "@/domain/object/plan/plan-domain-port"
 import { getPlanId } from "@/domain/object/plan/plan-schema"
 import { periodNonOverlappingGuard } from "@/domain/object/plan/principle/period-non-overlapping"
@@ -20,8 +20,8 @@ export const transitionDraftPlanToActivePlan: Transition<
   ActivePlan,
   TransitionDraftPlanToActivePlan
 > = (port) => async (input) => {
-  const period = transitionDraftPeriodToPeriod({
-    draftPeriod: input.draftPlan.draftPeriod,
+  const period = transitionPeriodSettingToPeriod({
+    periodSetting: input.draftPlan.periodSetting,
     config: {
       normalDays: 7,
       minDays: 3,
